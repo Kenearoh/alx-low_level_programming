@@ -1,23 +1,25 @@
 #include "main.h"
 /**
- * positive_or_negative() -test 'i' is positive_or_negative or 0.
- * 0 - the number to be checked
- * i - the variable to be tested
- * Return: 0
+ * main - Entry point
+ *
+ * positive_or_negative():'positive_or_negative()' output +, - or 0.
+ * @int i: variable to be checked for case 0
+ *
+ * Return: Always 0 (Success)
  */
 void positive_or_negative(int i)
 {
 	if (i > 0)
 	{
-		printf("%d is positive\n", i);
+		printf("%d is %s\n", i, "positive");
 	}
 	else if (i < 0)
 	{
-		printf("%d is negative\n", i);
+		printf("%d is %s\n", i, "negative");
 	}
 	else
 	{
-		printf("%d is zero\n", i);
+		printf("%d is %s\n", i, "zero");
 	}
-	return;
+	return (0);
 }
