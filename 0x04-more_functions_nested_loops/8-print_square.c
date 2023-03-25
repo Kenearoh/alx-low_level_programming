@@ -16,10 +16,13 @@ void print_square(int size)
 		{
 			_putchar('#');
 		}
+<<<<<<< HEAD
+=======
+		_putchar('\n');
+	}
+>>>>>>> 609610edf7bbc17e0ba4fb072d0b7040e3964977
 	if (size <= 0)
 		{
 			_putchar('\n');
 		}
-		_putchar('\n');
-	}
 }
