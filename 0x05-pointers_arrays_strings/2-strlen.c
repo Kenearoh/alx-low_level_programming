@@ -6,11 +6,9 @@
  */
 int _strlen(char *s)
 {
-	int i; /*i = string length*/
+	int i = 0;
 
 	while (s[i])
-	{
 		i++;
-	}
-	return (i);
+	return ('i');
 }
