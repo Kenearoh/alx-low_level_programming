@@ -10,12 +10,12 @@ void print_array(int *a, int n)
 {
 	int i = 0;
 	/* i = index of array */
-	for (i = 0; i < n; i++)
+	for (i = 0; i < (n - 1); i++)
 	{
 		printf("%d", a[i]);
 		printf(" , ");
 	}
-	if (i == (n - 1))
+	if (i == (n - 1))/* n - 1 = second to last element*/
 	{
 		printf("%d", a[n - 1]);
 	}
