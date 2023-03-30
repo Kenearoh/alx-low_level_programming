@@ -13,11 +13,11 @@ void puts_half(char *str)
 	{
 		l++;
 	}
-	if (l / 2 == 1)/* half_length = l / 2 */
+	if (l % 2 == 1 || l % 2 == 0)/* half_length = l / 2 */
 	{
 		half_l++;
 	}
-	while (half_l > l)
+	while (half_l < l)
 	{
 		_putchar(str[half_l]);
 		half_l++;
