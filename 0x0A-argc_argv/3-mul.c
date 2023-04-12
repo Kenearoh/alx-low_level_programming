@@ -5,7 +5,6 @@
  * main - multiplies two numbers
  * @argc: Argument count
  * @argv: Argument vector
- * @_atoi: converts the string argument to an integer
  * Return: Always zero
  */
 int main(int argc, char *argv[])
