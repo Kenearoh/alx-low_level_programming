@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	for (c = 0; c < 5 && num >= 0; c++)
 	{
-		while (num >= coins[j])
+		while (num >= coins[c])
 		{
 			result++;
 			num -= coins[c];
