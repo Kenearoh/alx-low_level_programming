@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /*
- * malloc_checked - checks  allocated memory using malloc
+ * malloc_checked - allocate memory
  * @b: character
  * Return: a pointer to allocated memory, or value 98
  */
