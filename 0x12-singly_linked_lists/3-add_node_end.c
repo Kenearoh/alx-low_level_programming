@@ -1,45 +1,40 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
 /**
-* add_nodeint_end - adds a node at the end of linked list
+* add_node_end - adds a node at the end of linked list
 * @head: pointer to the first element in list
-* @n: new input of the new element
-* Return: pointer to the new node, or NULL if it fails
+* @str: string to be added to node
+* Return: address of the adds_node element, or NULL if it fails
 */
-listint_t *add_nodeint_end(listint_t **head, const int n)
+list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *added_node, *temp_variable;
+	list_t *new_nodes;
+	list_t *tmp = *head;
+	unsigned int len = 0;
 
-if (head == NULL || str == NULL)
-return (NULL);
+	while (str[len])
+		len++;
 
-added_node = malloc(sizeof(list_t));
-if (added_node == NULL)
-return (NULL);
+	new_nodes = malloc(sizeof(list_t));
+	if (!new_nodes)
+		return (NULL);
 
-added_node->str = strdup(str);
-if (added_node->str == NULL)
-{
-free(added_node);
-return (NULL);
-}
+	new_nodes->str = strdup(str);
+	new_nodes->len = len;
+	new_nodes->next = NULL;
 
-added_node->len = strlen(str);
-added_node->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new_nodes;
+		return (new_nodes);
+	}
 
-if (*head == NULL)
-{
-*head = added_node;
-}
-else
-{
-temp_variable = *head;
-while (temp_variable->next != NULL)
-{
-temp_variable = temp_variable->next;
-}
-temp_variable->next = added_node;
-}
+	while (tmp->next)
+		tmp = tmp->next;
 
-return (added_node);
+	tmp->next = new_nodes;
+
+	return (new_nodes);
 }
