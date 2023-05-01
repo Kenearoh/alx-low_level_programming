@@ -8,12 +8,16 @@
 */
 int pop_listint(listint_t **head)
 {
-int var_store;
+listint_t *temp_ptr;
+int var_stored;
 
 if (!head || !*head)
 return (0);
 
-var_store = (*head)->n; /*store deleted node value*/
-*head = (*head)->next;
-return (var_store);
+var_stored = (*head)->n;
+temp_ptr = (*head)->next;
+free(*head);
+*head = temp_ptr;
+
+return (var_stored);
 }
