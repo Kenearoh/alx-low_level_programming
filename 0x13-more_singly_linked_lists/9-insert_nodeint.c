@@ -1,45 +1,45 @@
 #include "lists.h"
 /**
-* insert_nodeint_at_index - inserts a new node in a linked list,
+* insert_nodeint_at_index - inserts a new_nodes node in a linked list,
 * at a given position
 * @head: pointer to the first node in the list
-* @idx: index where the new node is added
-* @n: data to insert in the new node
+* @idx: index where the new_nodes node is added
+* @n: data to insert in the new_nodes node
 *
-* Return: pointer to the new node, or NULL
+* Return: pointer to the new_nodes node, or NULL
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-listint_t *node_nodelist, *temp_ptr = *head;
+unsigned int i;
+listint_t *new_nodes;
+listint_t *temp_ptr;
 
-if (head == NULL)
+new_nodes = malloc(sizeof(listint_t));
+if (!new_nodes || !head)
 return (NULL);
 
-node_nodelist = malloc(sizeof(listint_t));
-if (node_nodelist == NULL)
-return (NULL);
-
-node_nodelist->n = n;
+new_nodes->n = n;
+new_nodes->next = NULL;
 
 if (idx == 0)
 {
-node_nodelist->next = *head;
-*head = node_nodelist;
-return (node_nodelist);
+new_nodes->next = *head;
+*head = new_nodes;
+return (new_nodes);
 }
 
-for (unsigned int i = 0; temp_ptr != NULL; i++)
+temp_ptr = *head;
+for (i = 0; temp_ptr != NULL; i++)
 {
 if (i == idx - 1)
 {
-node_nodelist->next = temp_ptr->next;
-temp_ptr->next = node_nodelist;
-return (node_nodelist);
+new_nodes->next = temp_ptr->next;
+temp_ptr->next = new_nodes;
+return (new_nodes);
 }
-
 temp_ptr = temp_ptr->next;
 }
 
-free(node_nodelist);
+free(new_nodes);
 return (NULL);
 }
